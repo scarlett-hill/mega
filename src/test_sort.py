@@ -19,16 +19,13 @@ min_length = 5
 
 @pytest.fixture
 def array_random():
-    length = None
-    while (not length) or (length < min_length):
-        length, array = sort.create_generator(max_length, max_value)
-    return length, array
+    return sort.create_generator(max_length, max_value, min_length)
 
 
 class TestCreateGenerator:
     def test_create_generator_length(self, array_random):
         length, _ = array_random
-        assert 0 < length <= max_length
+        assert min_length <= length <= max_length
 
     def test_create_generator_value(self, array_random):
         _, generator = array_random

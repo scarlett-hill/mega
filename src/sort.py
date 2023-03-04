@@ -3,6 +3,7 @@ from typing import Generator
 from loguru import logger
 import wait
 
+MINIMUM_LENGTH = 1
 MAXIMUM_LENGTH = 1000
 MAXIMUM_VALUE = 1_000_000
 
@@ -14,9 +15,9 @@ def simulate():
 
 
 def create_generator(
-    max_length: int, maximum_value: int
+    max_length: int, maximum_value: int, min_length: int = MINIMUM_LENGTH
 ) -> tuple[int, Generator[int, None, None]]:
-    length = random.randint(1, max_length)
+    length = random.randint(min_length, max_length)
     return length, (random.randint(0, maximum_value) for _ in range(length))
 
 
