@@ -7,7 +7,7 @@ MAXIMUM_LENGTH = 1000
 MAXIMUM_VALUE = 1_000_000
 
 
-def simulation():
+def simulate():
     length, ls = generate_ls()
     ith = random.randint(0, length - 1)
     return find_i_th(ls, ith)
@@ -21,7 +21,9 @@ def generate_ls(
 
 
 def find_i_th(ls: list[float], ith=int) -> float:
-    return _find_i_th(list(ls), ith)
+    result = _find_i_th(list(ls), ith)
+    logger.warning(f"Here is the result: {result}.")
+    return result
 
 
 def _find_i_th(ls: list[float], ith: int) -> float:
@@ -44,6 +46,6 @@ def _find_i_th(ls: list[float], ith: int) -> float:
     if l == ith:
         return pivot
     elif l <= ith:
-        return find_i_th(greater, ith - l - 1)
+        return _find_i_th(greater, ith - l - 1)
     else:
-        return find_i_th(less, ith)
+        return _find_i_th(less, ith)

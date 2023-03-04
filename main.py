@@ -10,7 +10,7 @@ def main() -> None:
 def main_loop() -> None:
     for n in itertools.count():
         wait.wait(n)
-        sort.simulation()
+        sort.simulate()
 
 
 if __name__ == "__main__":
