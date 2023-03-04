@@ -22,12 +22,18 @@ def create_generator(
 
 
 def find_i_th(generator: Generator[int, None, None], ith: int) -> float:
-    result = _find_i_th(list(generator), ith)
-    logger.info(f"Here is the result: {result}.")
+    ls = list(generator)
+    original_length = len(ls)
+    result, n_step = _find_i_th(ls, ith)
+    logger.info(
+        f"""The array was {original_length}-long.
+            It took {n_step} steps to reach {ith}-th.
+            Here is the result: {result}."""
+    )
     return result
 
 
-def _find_i_th(ls: list[float], ith: int) -> float:
+def _find_i_th(ls: list[float], ith: int, n_step: int = 0) -> tuple[float, int]:
     wait.wait_a_little()
     if not 0 <= ith < len(ls):
         raise ValueError(f"We dont have {ith=}: 0 <= ith < {len(ls)=}.")
@@ -45,8 +51,8 @@ def _find_i_th(ls: list[float], ith: int) -> float:
             greater.append(num)
     l = len(less)
     if l == ith:
-        return pivot
+        return pivot, n_step
     elif l <= ith:
-        return _find_i_th(greater, ith - l - 1)
+        return _find_i_th(greater, ith - l - 1, n_step + 1)
     else:
-        return _find_i_th(less, ith)
+        return _find_i_th(less, ith, n_step + 1)
