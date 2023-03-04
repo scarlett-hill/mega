@@ -6,7 +6,7 @@ authors = ["mega"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 loguru = "^0.6.0"
 black = "^23.1.0"
 
