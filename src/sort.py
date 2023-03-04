@@ -8,7 +8,7 @@ MAXIMUM_LENGTH = 1000
 MAXIMUM_VALUE = 1_000_000
 
 
-def simulate():
+def simulate() -> float:
     length, generator = create_generator(MAXIMUM_LENGTH, MAXIMUM_VALUE)
     ith = random.randint(0, length - 1)
     return find_i_th(generator, ith)
