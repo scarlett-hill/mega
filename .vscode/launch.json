@@ -6,9 +6,10 @@
     "configurations": [
         {
             "name": "Python: Module",
+            "cwd": "src",
             "type": "python",
             "request": "launch",
-            "module": "src.main",
+            "module": "main",
             "justMyCode": true
         }
     ]

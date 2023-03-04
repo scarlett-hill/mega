@@ -12,4 +12,9 @@ Provide something that writes something on your machine because it's a waste not
 
 ### Run
 
-    poetry run python -m src.main  # run the project
+#### Command line
+    cd src
+    poetry run python -m main  # run the project
+
+#### VS Code
+Launch from the `launch.json` file provided with the repo.

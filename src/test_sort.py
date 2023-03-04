@@ -1,6 +1,6 @@
 import pytest
 
-import src.sort as sort
+import sort
 
 
 @pytest.fixture
@@ -26,6 +26,6 @@ def test_create_generator_length(array_random):
     assert 0 < length <= max_length
 
 
-def test_create_generator_value(array_ramdom):
+def test_create_generator_value(array_random):
     _, generator = array_random
     assert all(0 <= val <= max_value for val in generator)
