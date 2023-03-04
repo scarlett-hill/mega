@@ -1,7 +1,7 @@
 import random
 from typing import Generator
 from loguru import logger
-import wait
+import src.wait as wait
 
 MAXIMUM_LENGTH = 1000
 MAXIMUM_VALUE = 1_000_000

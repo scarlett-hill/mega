@@ -12,4 +12,4 @@ Provide something that writes something on your machine because it's a waste not
 
 ### Run
 
-    poetry run python -m main  # run the project
+    poetry run python -m src.main  # run the project

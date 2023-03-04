@@ -1,6 +1,6 @@
 import itertools
-import sort
-import wait
+import src.sort as sort
+import src.wait as wait
 
 
 def main() -> None:
