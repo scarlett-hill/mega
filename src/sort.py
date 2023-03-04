@@ -38,10 +38,7 @@ def _find_i_th(ls: list[float], ith: int, n_step: int = 0) -> tuple[float, int]:
     if not 0 <= ith < len(ls):
         raise ValueError(f"We dont have {ith=}: 0 <= ith < {len(ls)=}.")
     pivot = ls.pop()
-    logger.debug("==============")
-    logger.debug(f"{ls=}")
-    logger.debug(f"{ith=}")
-    logger.debug(f"{pivot=}")
+    log_state(ls, ith, pivot)
     less, greater = [], []
     while ls:
         num = ls.pop()
@@ -56,3 +53,10 @@ def _find_i_th(ls: list[float], ith: int, n_step: int = 0) -> tuple[float, int]:
         return _find_i_th(greater, ith - l - 1, n_step + 1)
     else:
         return _find_i_th(less, ith, n_step + 1)
+
+
+def log_state(ls: list[float], ith: int, pivot: float) -> None:
+    logger.debug("==============")
+    logger.debug(f"{ls=}")
+    logger.debug(f"{ith=}")
+    logger.debug(f"{pivot=}")
