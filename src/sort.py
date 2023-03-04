@@ -22,7 +22,7 @@ def create_generator(
 
 def find_i_th(generator: Generator[int, None, None], ith=int) -> float:
     result = _find_i_th(list(generator), ith)
-    logger.warning(f"Here is the result: {result}.")
+    logger.info(f"Here is the result: {result}.")
     return result
 
 
@@ -31,10 +31,10 @@ def _find_i_th(ls: list[float], ith: int) -> float:
     if not 0 <= ith < len(ls):
         raise ValueError(f"We dont have {ith=}: 0 <= ith < {len(ls)=}.")
     pivot = ls.pop()
-    logger.info("==============")
-    logger.info(f"{ls=}")
-    logger.info(f"{ith=}")
-    logger.info(f"{pivot=}")
+    logger.debug("==============")
+    logger.debug(f"{ls=}")
+    logger.debug(f"{ith=}")
+    logger.debug(f"{pivot=}")
     less, greater = [], []
     while ls:
         num = ls.pop()
