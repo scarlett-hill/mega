@@ -7,8 +7,8 @@ SMALL_WAIT = 5
 
 
 def wait(n: int) -> None:
-    time.sleep(random.randrange(MAX_SLEEP))
     logger.info(f"Python is calling me for the {n}-th time.")
+    time.sleep(random.randrange(MAX_SLEEP))
 
 
 def wait_a_little() -> None:
