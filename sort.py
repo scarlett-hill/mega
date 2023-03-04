@@ -8,20 +8,20 @@ MAXIMUM_VALUE = 1_000_000
 
 
 def simulate():
-    length, ls = generate_ls()
+    length, generator = create_generator()
     ith = random.randint(0, length - 1)
-    return find_i_th(ls, ith)
+    return find_i_th(generator, ith)
 
 
-def generate_ls(
+def create_generator(
     max_length: int = MAXIMUM_LENGTH, maximum_value: int = MAXIMUM_VALUE
 ) -> tuple[int, Generator[int, None, None]]:
     length = random.randint(1, max_length)
     return length, (random.randint(0, maximum_value) for _ in range(length))
 
 
-def find_i_th(ls: list[float], ith=int) -> float:
-    result = _find_i_th(list(ls), ith)
+def find_i_th(generator: Generator[int, None, None], ith=int) -> float:
+    result = _find_i_th(list(generator), ith)
     logger.warning(f"Here is the result: {result}.")
     return result
 
