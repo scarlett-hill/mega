@@ -18,3 +18,7 @@ Provide something that writes something on your machine because it's a waste not
 
 #### VS Code
 Launch from the `launch.json` file provided with the repo.
+
+### Testing
+    cd src
+    poetry run pytest
