@@ -7,13 +7,13 @@ from loguru import logger
 
 import wait
 
-MINIMUM_LENGTH = 1
-MAXIMUM_LENGTH = 1000
-MAXIMUM_VALUE = 1_000_000
-
 array_integer = functools.partial(array.array, "I")
 Size = int
 Value = int
+
+MINIMUM_LENGTH: Size = 1
+MAXIMUM_LENGTH: Size = 1000
+MAXIMUM_VALUE: Value = 1_000_000
 
 
 def simulate() -> Value:
