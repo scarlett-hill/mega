@@ -12,7 +12,7 @@ Size = int
 Value = int
 
 MINIMUM_LENGTH: Size = 1
-MAXIMUM_LENGTH: Size = 1000
+MAXIMUM_LENGTH: Size = 1_000_000
 MAXIMUM_VALUE: Value = 1_000_000
 
 
